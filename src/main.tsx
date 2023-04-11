@@ -9,9 +9,7 @@ import Layout from "./components/layout/Layout";
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
-      <Layout>
-        <App />
-      </Layout>
+      <App />
     </ChakraProvider>
   </React.StrictMode>
 );
