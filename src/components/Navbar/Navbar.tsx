@@ -53,7 +53,7 @@ const Navbar: React.FC<NavbarProps> = () => {
       className={isSticky ? "sticky" : ""}
     >
       <Heading as="h1" size="lg" ml={10}>
-        Buffer
+        ChronoPost
       </Heading>
       <NavOptions />
       <NavRight />

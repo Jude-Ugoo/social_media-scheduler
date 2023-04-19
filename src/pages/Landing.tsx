@@ -34,15 +34,17 @@ const Landing: React.FC<LandingProps> = () => {
             fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
             lineHeight={"110%"}
           >
-            Simpler social media tools for <br />
+            Schedule Your Social Media <br />
             <Text as={"span"} color={"green.400"}>
-              authentic engagememt
+              Posts with Ease
             </Text>
           </Heading>
           <Text color={"gray.500"}>
-            Buffer helps you build an audience organically. We’re a
-            values-driven company that provides affordable, intuitive, marketing
-            tools for ambitious people and teams.
+            ChronoPost is a social media posting app that makes it easy to
+            schedule posts on multiple platforms at once. With ChronoPost, you
+            can write your posts in advance and set a custom posting schedule
+            for each platform, so you can stay active on social media without
+            the hassle of manual posting
           </Text>
           <Stack
             direction={"column"}
