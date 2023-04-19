@@ -26,8 +26,9 @@ const LandingCard: React.FC<LandingCardProps> = () => {
         w="100px"
         objectFit={"cover"}
         borderRadius="50%"
-        zIndex={"1"}
+        // zIndex={"1"}
         mb="-10"
+        position={'relative'}
       />
 
       <Card
