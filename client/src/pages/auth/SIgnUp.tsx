@@ -68,7 +68,6 @@ const SignUp: React.FC<SignUpProps> = () => {
         password,
         confirmPassword,
       });
-      // localStorage.setItem("currentUser", JSON.stringify(res.data));
       navigate("/signin");
     } catch (err) {
       console.log(err);

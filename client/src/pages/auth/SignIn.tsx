@@ -15,16 +15,28 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 
-import { Link, useNavigate } from "react-router-dom";
-import React, { useState } from "react";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 import newRequest from "../../utils/newRequest";
 
 import { FormEvent } from "react";
+import { useUserStore } from "../../store/userStore";
 
 type SignInProps = {};
 
 const SignIn: React.FC<SignInProps> = () => {
   const navigate = useNavigate();
+  const { user, fetchUser } = useUserStore();
+
+  console.log("user is:", user);
+
+  useEffect(() => {
+    fetchUser();
+  }, [fetchUser]);
+
+  // useEffect(() => {
+  //   console.log("Updated user is", user)
+  // }, [user])
 
   const [formData, setFormData] = useState({
     email: "",
@@ -47,7 +59,6 @@ const SignIn: React.FC<SignInProps> = () => {
     event.preventDefault();
 
     const error = validateForm();
-    // setFormData({ ...formData, error });
     setFormData((prevFormData) => ({ ...prevFormData, error }));
     console.log(formData);
 
@@ -55,7 +66,8 @@ const SignIn: React.FC<SignInProps> = () => {
       const { email, password } = formData;
       const res = await newRequest.post("/auth/login", { email, password });
       localStorage.setItem("currentUser", JSON.stringify(res.data));
-      navigate("/getting_started");
+      navigate("/onboarding");
+      console.log("user is", user);
     } catch (err) {
       error;
     }
@@ -166,15 +178,6 @@ const SignIn: React.FC<SignInProps> = () => {
         </Box>
 
         <Box w="65%">
-          {/* <Heading as="h2" size="xl">
-            Introducing: A free micro-site by Buffer
-          </Heading>
-
-          <Text>
-            A Start Page is a beautiful, flexible, mobile-friendly landing page
-            that you can build in minutes and update in seconds
-          </Text> */}
-
           <Image
             src="/images/login_img2.jpg"
             height="100%"
